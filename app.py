@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template
-#from flask_cors import cross_origin
+from flask_cors import cross_origin
 import sklearn
 import pickle
 import pandas as pd
@@ -356,10 +356,10 @@ def predict():
 
         output=round(prediction[0],2)
 
-        return render_template('home.html',prediction_text="Your Flight price is Rs. {}".format(output))
+        return render_template('index.html',prediction_text="Your Flight price is Rs. {}".format(output))
 
 
-    return render_template("home.html")
+    return render_template("index.html")
 
 
 
